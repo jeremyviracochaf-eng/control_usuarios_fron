@@ -1,5 +1,6 @@
 import { useState } from "react";
 import api from "../services/api";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [email, setEmail] = useState("");
@@ -57,6 +58,14 @@ export default function Login() {
       <button type="submit" disabled={loading}>
         {loading ? "Ingresando..." : "Ingresar"}
       </button>
+
+      <div style={{ marginTop: "15px", textAlign: "center" }}>
+       <p>¿No tienes una cuenta?</p>
+        <Link to="/register" style={{ color: "#4f46e5", fontWeight: "bold" }}>
+        Regístrate aquí
+       </Link>
+     </div>
+     
     </form>
   );
 }
